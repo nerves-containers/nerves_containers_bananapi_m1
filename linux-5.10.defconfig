@@ -1,3 +1,5 @@
+# https://stackoverflow.com/questions/41885015/what-exactly-does-linux-kernels-make-defconfig-do
+#
 # enable hdmi framebuffer, see https://linux-sunxi.org/Display#Framebuffer_console_at_boot
 CONFIG_FB_SUNXI=y
 CONFIG_FB_SUNXI_LCD=y
@@ -5,6 +7,8 @@ CONFIG_FB_SUNXI_HDMI=y
 CONFIG_FRAMEBUFFER_CONSOLE=y
 CONFIG_FONT_8x8=y
 CONFIG_FONT_8x16=y
+# enable wireguard
+CONFIG_WIREGUARD=m
 # enable squashfs
 CONFIG_SQUASHFS=y
 CONFIG_SQUASHFS_FILE_DIRECT=y
