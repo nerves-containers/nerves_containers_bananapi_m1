@@ -104,7 +104,7 @@ defmodule NervesContainersBananapiM1.MixProject do
       "fwup-revert.conf",
       "fwup.conf",
       "mix.exs",
-      "linux-5.10.defconfig",
+      "linux.fragment",
       "nerves_defconfig",
       "post-build.sh",
       "post-createfs.sh",
