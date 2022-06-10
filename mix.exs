@@ -18,7 +18,7 @@ defmodule NervesSystemBananapiM1.MixProject do
       description: description(),
       package: package(),
       deps: deps(),
-      aliases: [loadconfig: [&bootstrap/1], docs: ["docs", &copy_images/1]],
+      aliases: [loadconfig: [&bootstrap/1]],
       docs: docs(),
       preferred_cli_env: %{
         docs: :docs,
@@ -65,8 +65,8 @@ defmodule NervesSystemBananapiM1.MixProject do
   defp deps do
     [
       {:nerves, "~> 1.5.4 or ~> 1.6.0 or ~> 1.7.4", runtime: false},
-      {:nerves_system_br, "1.17.2", runtime: false},
-      {:nerves_toolchain_armv7_nerves_linux_gnueabihf, "~> 1.4.3", runtime: false},
+      {:nerves_system_br, "1.19.0", runtime: false},
+      {:nerves_toolchain_armv7_nerves_linux_gnueabihf, "~> 1.5.0", runtime: false},
       {:nerves_system_linter, "~> 0.4", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.22", only: :docs, runtime: false}
     ]
@@ -82,6 +82,7 @@ defmodule NervesSystemBananapiM1.MixProject do
     [
       extras: ["README.md"],
       main: "readme",
+      assets: "assets",
       source_ref: "v#{@version}",
       source_url: @source_url
     ]
@@ -110,11 +111,6 @@ defmodule NervesSystemBananapiM1.MixProject do
       "README.md",
       "VERSION"
     ]
-  end
-
-  # Copy the images referenced by docs, since ex_doc doesn't do this.
-  defp copy_images(_) do
-    File.cp_r("assets", "doc/assets")
   end
 
   defp build_runner_opts() do
